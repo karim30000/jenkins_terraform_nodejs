@@ -1,0 +1,9 @@
+- name: slave
+  hosts: all
+  remote_user: ubuntu
+  become: yes
+  vars:
+    - ansible_host_key_checking: false
+  roles:
+    - configure-servers
+        
