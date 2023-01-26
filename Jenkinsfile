@@ -23,4 +23,8 @@ pipeline{
 }
 
 
+ssh -o ProxyCommand="ssh -i /var/jenkins_home/test.pem -W %h:%p ubuntu@54.162.224.244" -i /var/jenkins_home/test.pem ubuntu@172.31.56.220
 
+ssh -o ProxyCommand="ssh -i /var/jenkins_home/test.pem -W %h:%p ubuntu@54.162.224.244" -i /var/jenkins_home/test.pem ubuntu@172.31.56.220 java  -jar /home/ubuntu/jenkins_home/remoting.jar -workDir /home/ubuntu/jenkins_home -jar-cache /home/ubuntu/jenkins_home/remoting/jarCache
+
+ssh -o ProxyCommand="ssh -i /var/jenkins_home/test.pem -W %h:%p ubuntu@54.162.224.244" -i /var/jenkins_home/test.pem ubuntu@172.31.56.220 java  -jar /home/ubuntu/jenkins_home/remoting.jar

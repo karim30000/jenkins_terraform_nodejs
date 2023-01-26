@@ -1,18 +1,18 @@
 Host jumpbox
-  HostName 34.201.29.96
+  HostName 3.238.67.10
   Port 22
   User ubuntu
   StrictHostKeyChecking no
   IdentityFile /root/git-repos/jenkins_terraform_nodejs/ansible/test.pem
 Host server1      
-  HostName 10.0.2.118
+  HostName 10.0.2.115
   Port 22
   User ubuntu
   StrictHostKeyChecking no
   IdentityFile /root/git-repos/jenkins_terraform_nodejs/ansible/test.pem
   ProxyJump jumpbox
 Host server2
-  HostName 10.0.3.245
+  HostName 10.0.3.67
   Port 22
   User ubuntu
   ProxyJump jumpbox

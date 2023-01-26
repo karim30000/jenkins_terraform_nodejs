@@ -2,17 +2,17 @@
   apt:
     update_cache: yes
 
-- name: "copy env file"
-  become: true
-  copy:
-    src: files/
-    dest: /home/ubuntu/
-
 - name: create directory
   file:
     path: /home/ubuntu/jenkins_home
     state: directory
     mode: '0777'
+
+- name: "copy agent.jar file"
+  become: true
+  copy:
+    src: files/
+    dest: /home/ubuntu/jenkins_home/
 
 - name: install openjdk
   apt:
