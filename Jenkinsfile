@@ -5,16 +5,16 @@ pipeline{
             steps{
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 sh """
-                docker build . -f dockerfile -t karim3000/nodejsapp3:1.3
+                docker build . -f dockerfile -t karim3000/nodejsapp3:1.4
                 docker login -u ${USERNAME} -p ${PASSWORD}
-                docker push karim3000/nodejsapp3:1.3
+                docker push karim3000/nodejsapp3:1.4
                 """
                 }
             }
         }
         stage("CD"){
             steps{
-                sh "docker run -d --env-file /home/ubuntu/jenkins_home/output.txt -p 3000:3000 karim3000/nodejsapp3:1.3"
+                sh "docker run -d --env-file /home/ubuntu/jenkins_home/output.txt -p 3000:3000 karim3000/nodejsapp3:1.4"
 
             }
         }
