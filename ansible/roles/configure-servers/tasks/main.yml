@@ -8,7 +8,13 @@
     state: directory
     mode: '0777'
 
-- name: "copy agent.jar file"
+- name: "copy env file"
+  become: true
+  copy:
+    src: files/output.txt
+    dest: /home/ubuntu/jenkins_home/
+
+- name: "copy remote agent files"
   become: true
   copy:
     src: files/
