@@ -7,7 +7,7 @@ pipeline{
                 sh """
                 docker build . -f dockerfile -t karim3000/nodejsapp2     
                 docker login -u ${USERNAME} -p ${PASSWORD}
-                docker push karim3000/nodejsapp
+                docker push karim3000/nodejsapp2
                 """
                 }
             }
