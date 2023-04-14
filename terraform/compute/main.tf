@@ -188,6 +188,7 @@ resource "aws_lb_target_group" "lb_target_group" {
   port     = 3000
   protocol = "HTTP"
   vpc_id   = var.vpc_id
+  slow_start = 60
   health_check {
     interval            = 10
     timeout             = 8
